@@ -12,12 +12,15 @@ const Gyms = () => {
 
     return (
         <>
-        <h1>All Gyms</h1>
-        <ul>
+        <h1 className='my-10 text-3xl font-semibold text-teal-500'>All Gyms</h1>
+        <a className="text-blue-500 underline" href="/new">Add New Gym</a>
+        <ul className='mt-10'>
             {gyms?.length ? (
                 gyms.map((gym, index) => {
                     return (
-                        <li key={index}>{gym.title}</li>
+                        <li key={index}>
+                            <a className="text-blue-500 underline" href={`/gym/${gym._id}`}>
+                        {gym.title}</a></li>
                     )
                 })
             ): <h2>No Data</h2>}
@@ -29,10 +32,3 @@ const Gyms = () => {
 
 export default Gyms;
 
-{/* {gyms?.length? (
-            gyms.map((gym, index) => {
-                return (
-                    <li>{gym.title}</li>
-                )
-            })
-        ): <h2>No Data</h2>} */}
